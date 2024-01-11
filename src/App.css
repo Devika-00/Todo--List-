@@ -1,0 +1,89 @@
+.App{
+  position:relative;
+  width: 100%;
+  height: 100%;
+  
+}
+.App img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.background-image {
+  width: 100%;
+  height: auto;
+}
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.header {
+  background: #1a1a5a;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 1%;
+  left: 60%;
+  z-index: 1;
+}
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #6a4db3;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 300px;
+  height: 23px;
+  color: #f3f0f0;
+  border-radius: 2px;
+}
+
+.todo-input::placeholder {
+  color: #e4d9d9db;
+}
+
+.todo-btn {
+  background: #795ac8;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  height: 40px;
+ 
+}
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6a43cd;
+  color: #fff;
+  padding-left: 1rem;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.fa-trash {
+  margin-right: 0.75rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.completed-text {
+  margin-left: 8px;
+}
+.checkbox{
+  display: flex;
+}
+.checkbox > p{
+  margin-left: 5px;
+}
