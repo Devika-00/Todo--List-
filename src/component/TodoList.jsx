@@ -10,15 +10,30 @@ const Header = () => {
     if(tasks.includes(newTask.toLowerCase())){
       toast.error("Task already exists")
     }else{
-      setTasks([...tasks,newTask]);
+      setTasks([...tasks,{ text: newTask, isEditing: false }]);
     }
   }
 
   const onDelete =(index) =>{
     const newTasks = [...tasks]
-    newTasks.splice(index)
+    newTasks.splice(index,1)
     setTasks(newTasks)
   }
+
+  const onEdit = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].isEditing = true;
+    setTasks(newTasks);
+  };
+
+  const onSaveEdit = (index, newText) => {
+    const newTasks = [...tasks];
+    newTasks[index].text = newText;
+    newTasks[index].isEditing = false;
+    setTasks(newTasks);
+  };
+
+
 
   return (
     <div className='header'>
@@ -26,7 +41,9 @@ const Header = () => {
         <TodoForm addTask={addTask}/>
         {tasks.map((task,index)=>{
           return <Todo task={task} key={index}
-          onDelete={onDelete} index={index}/>
+          onDelete={onDelete} index={index}
+          onEdit={onEdit}
+          onSaveEdit={onSaveEdit}/>
 
         })}
         <Toaster/>
